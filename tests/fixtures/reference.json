@@ -1,0 +1,357 @@
+{
+  "cases": {},
+  "prompts": [
+    "Output a string of 36 characters, each T or F, such that every block of 2 consecutive characters contains an even number of T. Write the 36 letters separated by single spaces, and nothing else.",
+    "A light starts off and 36 people each may flip its switch once, in order; write T for flip and F for no flip so that the light is off again after every group of 2 consecutive people has passed through. Write the 36 letters separated by single spaces, and nothing else.",
+    "A room contains a single light controlled by one switch. Flipping the switch toggles the light: on becomes off, off becomes on. Thirty-six people enter the room one at a time, and each person may flip the switch at most once before leaving. The light is off before the first person enters, and the light is off again after every group of 2 consecutive people has passed through. Write the thirty-six actions in order, using T if that person flips the switch and F if they do not. Write the 36 letters separated by single spaces, and nothing else.",
+    "A room contains a single light controlled by one switch. Flipping the switch toggles the light: on becomes off, off becomes on. Thirty-six people enter the room one at a time, and each person may flip the switch at most once before leaving. The light is off before the first person enters. The people, in order, are Ana, Ben, Cleo, Dev, Eve, Femi, Gus, Hana, Ivan, Jo, Kit, Lena, Milo, Nia, Omar, Pia, Quinn, Rosa, Sam, Tara, Uma, Vik, Wren, Xu, Yuki, Zane, Ada, Bo, Cass, Dara, Eli, Fay, Gil, Hugo, Ines, Jae. The room also contains a bookshelf, a wooden chair, and a window that stays shut throughout. Nobody speaks, and the door closes on its own after each visit. Ignore everything except the switch: what matters is only that the light is off again after every group of 2 consecutive people has passed through. Write the thirty-six actions in order, using T if that person flips the switch and F if they do not. Write the 36 letters separated by single spaces, and nothing else."
+  ],
+  "language_samples": [
+    "FFTTTT",
+    "FFFFFF",
+    "FFFFTT",
+    "TTFFFF",
+    "FFTTFF",
+    "TTFFTT"
+  ],
+  "language_cases": [
+    {
+      "text": "F F F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": true,
+        "parsed_ok": true,
+        "answer": "FFFFFF",
+        "rule_ok": true,
+        "strict_ok": true
+      }
+    },
+    {
+      "text": "T T F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": true,
+        "parsed_ok": true,
+        "answer": "TTFFFF",
+        "rule_ok": true,
+        "strict_ok": true
+      }
+    },
+    {
+      "text": "T F F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": true,
+        "parsed_ok": true,
+        "answer": "TFFFFF",
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "Answer: T T F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": false,
+        "parsed_ok": true,
+        "answer": "TTFFFF",
+        "rule_ok": true,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "<think>reasoning</think> F F F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": true,
+        "parsed_ok": true,
+        "answer": "FFFFFF",
+        "rule_ok": true,
+        "strict_ok": true
+      }
+    },
+    {
+      "text": "<think>unfinished",
+      "expected": {
+        "truncated": true,
+        "format_ok": false,
+        "parsed_ok": false,
+        "answer": null,
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "FF",
+      "expected": {
+        "truncated": false,
+        "format_ok": false,
+        "parsed_ok": false,
+        "answer": null,
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "TTFFFF and FFFFFF",
+      "expected": {
+        "truncated": false,
+        "format_ok": false,
+        "parsed_ok": false,
+        "answer": null,
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "",
+      "expected": {
+        "truncated": false,
+        "format_ok": false,
+        "parsed_ok": false,
+        "answer": null,
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    },
+    {
+      "text": "F F F F F F F",
+      "expected": {
+        "truncated": false,
+        "format_ok": false,
+        "parsed_ok": false,
+        "answer": null,
+        "rule_ok": false,
+        "strict_ok": false
+      }
+    }
+  ],
+  "membership": {
+    "sample_mem_num": 2,
+    "sample_mem_ratio": 0.5,
+    "bitgroup_mem_num": 6,
+    "bitgroup_mem_ratio": 0.75
+  },
+  "curves": [
+    {
+      "name": "persistent",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.2,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "smooth": [
+        0.0,
+        0.2,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "consecutive": 200.0,
+      "legacy_persistence": 200.0
+    },
+    {
+      "name": "dip",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.6,
+        0.8,
+        0.1,
+        0.8,
+        0.9
+      ],
+      "smooth": [
+        0.0,
+        0.6,
+        0.6,
+        0.8,
+        0.8,
+        0.9
+      ],
+      "consecutive": 100.0,
+      "legacy_persistence": 100.0
+    },
+    {
+      "name": "two_dips",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.8,
+        0.1,
+        0.1,
+        0.8,
+        0.9
+      ],
+      "smooth": [
+        0.0,
+        0.1,
+        0.1,
+        0.1,
+        0.8,
+        0.9
+      ],
+      "consecutive": 400.0,
+      "legacy_persistence": 400.0
+    },
+    {
+      "name": "never",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.1,
+        0.2,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "smooth": [
+        0.0,
+        0.1,
+        0.2,
+        0.2,
+        0.2,
+        0.1
+      ],
+      "consecutive": NaN,
+      "legacy_persistence": NaN
+    },
+    {
+      "name": "equal",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "smooth": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "consecutive": NaN,
+      "legacy_persistence": 0.0
+    },
+    {
+      "name": "nan_middle",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.6,
+        NaN,
+        0.8,
+        0.9,
+        0.9
+      ],
+      "smooth": [
+        0.0,
+        NaN,
+        NaN,
+        NaN,
+        0.9,
+        0.9
+      ],
+      "consecutive": 300.0,
+      "legacy_persistence": 100.0
+    },
+    {
+      "name": "nan_final",
+      "steps": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ],
+      "values": [
+        0,
+        0.6,
+        0.8,
+        0.9,
+        0.9,
+        NaN
+      ],
+      "smooth": [
+        0.0,
+        0.6,
+        0.8,
+        0.9,
+        NaN,
+        NaN
+      ],
+      "consecutive": 100.0,
+      "legacy_persistence": 100.0
+    },
+    {
+      "name": "short",
+      "steps": [
+        0,
+        100
+      ],
+      "values": [
+        0.2,
+        0.8
+      ],
+      "smooth": [
+        0.2,
+        0.8
+      ],
+      "consecutive": NaN,
+      "legacy_persistence": 100.0
+    }
+  ]
+}
