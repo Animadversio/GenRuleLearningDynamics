@@ -1,0 +1,27 @@
+{
+  "device": "cpu",
+  "threads": 2,
+  "tolerance": {
+    "rtol": 1e-05,
+    "atol": 1e-06
+  },
+  "note": "Small nonzero synthetic probe states; not the trained paper checkpoints.",
+  "source_sha256": {
+    "core/DiT_model_lib.py": "1b8031a1340a3d1045c0bdb382334068f5f20e32edf67b3e6aba961ba91846ca",
+    "core/diffusion_edm_lib.py": "8e2af3ba7dcf7078477688a52b2b6e1cbdd591051a7cff8dc051b32f3953e268",
+    "scripts/GPT_learn_parity_CLI.py": "e6d187179acffa240e5454aa86e6d1323302e8f53a8aaa008a0533bc64d4921d",
+    "scripts/llm_switch_sft.py": "c45ac6eff31b47c2578420ad2b2d31123f15658392198105a313bd94dd1cd50c"
+  },
+  "environment": {
+    "torch": "2.4.1",
+    "torchvision": "0.19.1",
+    "numpy": "2.0.2",
+    "timm": "1.0.7",
+    "transformers": "5.5.0"
+  },
+  "artifacts": {
+    "dit_state.pt": "6558edc984895fd8f345b7680f97d636ae6afb7cc62cb850bdf0288f6f5a5657",
+    "gpt_state.pt": "b839b3c02ff93de6d739a5dc3477b41f5342e2591b7d5070cc8e77f8099c6c49",
+    "reference.pt": "6ef9c11dbcd59c388ea6c9c0fbd1de9e8d278822f2c7ac4aec63d65a5e613509"
+  }
+}
