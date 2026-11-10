@@ -1,0 +1,29 @@
+{
+  "source": "/n/home12/binxuwang/Github/DiffusionAttnConsistency/figures/vector_field/vf_v3_animation.gif",
+  "sha256": "0b2840919ceec2ff438f18ff28d2025096d72361c78bcf440c66ae11f13d593a",
+  "size_bytes": 4301271,
+  "dimensions": [
+    2679,
+    1340
+  ],
+  "frames": 16,
+  "frame_duration_ms": [
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400,
+    400
+  ],
+  "loop": 0
+}
