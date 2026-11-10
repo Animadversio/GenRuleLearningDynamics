@@ -28,3 +28,32 @@ projecting about 6.6 seconds for the 15 reference images. No model training or l
 remote-storage scan was needed; reusable image fixtures and trajectories are cached.
 
 See `reproducibility.md` and `migration.md` for exact scope and preserved legacy behavior.
+
+
+## Second migration — model/training foundations
+
+- Legacy DiT/GPT reference suite: 10 passed before implementation migration.
+- The same refactored DiT/GPT suite: 10 passed, including forward/loss/sampling,
+  three-step Adam/AdamW updates, callbacks and strict small-checkpoint loading.
+- End-to-end GPT and diffusion CLI smoke tests: 2 passed, including final evaluation,
+  saved artifacts and TensorBoard logs.
+- Complete main-environment suite: 87 passed; the built non-editable 0.2.0 wheel also
+  passed all 87 tests from outside the repository.
+- Legacy actual-tokenizer/TRL suite: 6 passed before SFT helper migration. The migrated
+  helpers and the installed 0.2.0 wheel each passed all 6 tests. This includes 36 answer tokens plus EOS, masked
+  prompt/padding tokens, malformed-mask rejection and one actual tiny-model TRL step.
+- The reference tokenizer snapshot and tokenizer/source file hashes are stored in
+  `tests/fixtures/llm/reference.json`; no pretrained model weights were downloaded.
+- DiT forward/backward timing probe: 0.514 seconds, projected <15.4 seconds for the
+  short numerical capture after imports. Actual tiny Qwen training step: about 1.1 seconds;
+  LLM environment initialization/preprocessing adds roughly one minute on this filesystem.
+- All captured source hashes still match the unchanged original research checkout.
+- The distribution contains the upstream DiT and EDM license texts.
+
+The model fixtures use small synthetic probe weights with nonzero DiT outputs. They do
+not establish equality of long GPU training trajectories or validate every historical
+large checkpoint. The Qwen harness uses actual tokenization/TRL with a tiny randomly
+initialized model; full Qwen3-1.7B training and generation/transfer trajectories remain
+outside this validation. Separate reference dependency constraints are in `environments/`.
+
+All three installed console entry points also passed `--help` startup checks.

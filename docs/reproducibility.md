@@ -58,3 +58,10 @@ GENRULE_LEGACY_ROOT=/path/to/DiffusionAttnConsistency python -m pytest -q tests/
 
 Do not regenerate fixtures to make a failing refactor pass. An intended scientific or
 numerical change needs an explicit protocol/version update and comparison with old results.
+
+## Status after the second migration
+
+DiT/EDM and GPT model/training gates and Qwen preprocessing gates now have their own
+frozen references and passing tests. See `model_reproducibility.md`, `training.md` and
+the second-migration section of `validation.md`; the first-migration contract above
+remains the record of the original scope.

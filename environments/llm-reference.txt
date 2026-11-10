@@ -1,0 +1,6 @@
+# Separate reference environment, Python 3.11. Do not combine with models-reference.txt.
+torch==2.8.0
+transformers==5.14.1
+trl==1.9.2
+datasets==5.0.1
+accelerate==1.14.0

@@ -59,3 +59,24 @@ checkout contained uncommitted experimental changes. No source files were edited
 
 Long training runs are not required for this first gate. Before any larger computation,
 time a small representative workload, report an ETA, and cache reusable numerical outputs.
+
+## Second migration
+
+- Moved DiT without changing architecture/state keys and split EDM loss/preconditioning/sampling
+  from the original score training loop. Added the upstream license texts and notices.
+- Extracted the actual GPT optimizer-update body and sampler from the research CLI. Its
+  portable CLI retains the training/evaluation schedule, adds output/device/seed options,
+  and fixes the existing final-evaluation argument mismatch.
+- Added a minimal diffusion CLI for generated parity or supplied normalized image tensors,
+  using the tested original trainer. It saves TensorBoard logs and numerical artifacts;
+  per-task image evaluation schedules are still a separate migration.
+- Split Qwen SFT preprocessing and transfer-evaluation helpers from its CLI. The new CLI
+  accepts output roots and revision pinning, records dependency/model metadata, and rejects
+  unsupported tiny/full-support configurations before live held-out evaluation.
+- Tests cover small CPU probe checkpoints rather than all original trained models. The
+  original GPT full-vocabulary sampling and diffusion checkpoint numbering are preserved.
+
+The first model gate above is now covered for DiT/EDM and GPT; the Qwen preprocessing gate
+covers actual tokenization, EOS/padding masks and a tiny real trainer step. Remaining work
+includes full-run Qwen generation/transfer comparisons, other diffusion architectures,
+raw log readers and remaining figure exports.

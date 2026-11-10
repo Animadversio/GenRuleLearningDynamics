@@ -1,0 +1,2 @@
+# Preserve upstream license texts byte-for-byte.
+LICENSES/*.txt whitespace=-blank-at-eol
