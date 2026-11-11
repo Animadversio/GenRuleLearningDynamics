@@ -4,6 +4,12 @@ Official project repository for **The two clocks and the innovation window: When
 
 We study when generative models learn rules, memorize training examples, and generate novel valid samples. The experiments compare diffusion and autoregressive models on discrete-rule tasks, with extensions toward more naturalistic rendered images and language.
 
+<p align="center">
+  <a href="assets/landscape-dynamics.gif"><img src="assets/landscape-dynamics.gif" alt="Evolution of the diffusion score and denoiser fields across training, on a plane containing training, valid-novel, and invalid examples at four noise scales." width="100%"></a>
+</p>
+
+**How does the denoising landscape change as a model learns?** Training dynamics on a two-dimensional slice for group parity ($G=3$, $D=36$, $N=4096$). Columns show noise scales $\sigma=0.2,0.5,1,2$; rows show score magnitude and a projected denoiser component, with arrows indicating the corresponding fields. Cyan, green, and red stars mark training, valid-novel, and invalid examples. [View full size and provenance](assets/README.md).
+
 ## Current release: tasks, models and training foundations
 
 This first migration provides rule sampling and checking, Block/Orb/Flower rendering and decoding, the four Light-switch prompts and parser, explicit memorization metrics, onset extraction, and a portable Block/Orb clock figure pipeline.
