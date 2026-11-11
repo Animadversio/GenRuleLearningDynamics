@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "figures": {
+    "image_clocks": {
+      "paper_panel": "Figure 5B numerical clock panel",
+      "scope": "Block/Orb observations, bounds and low-dimensional Block fit; not the full typeset figure",
+      "script": "paper/figures/image_clocks.py",
+      "inputs": ["paper/data/image_trajectories.csv", "paper/data/image_onsets.csv"],
+      "protocol": "image-audit persistence: centered width-3 median; >= threshold; nonfinite smoothed values fail; conditional image estimates with <30 valid draws already withheld in cache",
+      "provenance": "tests/fixtures/provenance.json",
+      "command": "python paper/figures/image_clocks.py --out outputs/image_clocks"
+    }
+  }
+}

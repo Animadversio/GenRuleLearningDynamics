@@ -1,0 +1,32 @@
+{
+  "source_commit": "937afefc137e2aae157cee8c045f664526c92c2e",
+  "reference_kind": "working tree (may differ from commit); hashes are authoritative",
+  "source_sha256": {
+    "core/parity_lib.py": "c010f48711b9d28c6194e6abff424b5111be485192e166e0b8e32e7a3c7a207d",
+    "core/exact_k_lib.py": "d3e89c79a9e28fd6c9f388369d0d5b61a6b2c1980ab8ed20595c84afe2348afe",
+    "core/row_k_lib.py": "aa324456d23f2abd4cc5172164318ec77393b517bc624074df8b4fc0baf36720",
+    "core/latin_square_lib.py": "81f1fc8124b7a4794cb6601d5f9bd7ac3f24987486d27bdc9c84417ac5e38fe5",
+    "core/flower_rule_lib.py": "38ba41f1cefa384df775628179478ec2cea8dcfdcbfabc9eef762d74e023b503",
+    "core/orb_grid_lib.py": "1edaa3d759f089ea5b224743be7d696d04cf02892ed94f42ab48f5b79726db61",
+    "core/switch_rule_lib.py": "30be5cb486b13d573698ef46bf49e69fc1044a8fb424c687dbae6067ccaca7a0",
+    "core/onset_lib.py": "b2bf353f7c151ff6f2f5df4e4087471c97cd36e232ed80a761efecd259e71200",
+    "scripts/redecode_flower_samples.py": "ee02c011599bfb6d391f96622f4c284746e5dc113235dbf454f7f8d31ed3b2c6",
+    "scripts/parity_memorization_eval_cli.py": "43b2397d43e2c66b9a703204acee11b489568ff5d717b432784fd8b5269407d8",
+    "scripts/audit_image_clock_figure.py": "94c6ffc8068744d0399d0d1d52bfeacdfd95c469898a66241212603144ebd104",
+    "outputs/paper_audit_20261107/image_clocks/onsets.csv": "b5667c090c8b4f119a6f8301bd7594b8e86972e8a4743763200ba47cd2edd76a",
+    "outputs/paper_audit_20261107/image_clocks/trajectories.csv": "1ab53e8143225a1e44c8e1730f6cbbf078fb1981ebd00232f572de7988e9d3de"
+  },
+  "environment": {
+    "python": "3.10.14",
+    "numpy": "2.0.2",
+    "torch": "2.4.1",
+    "opencv-python": "4.10.0.84",
+    "pytest": "8.3.4"
+  },
+  "artifact_sha256": {
+    "tests/fixtures/reference.npz": "4f167db616fc4c605582ab7f96f6aedc0009547597886976f857b0b8cfad3ac1",
+    "tests/fixtures/reference.json": "1619996381e44a040ec7b2039d2ab0e4affe5f8cfd82efda20896579c10b6130",
+    "paper/data/image_onsets.csv": "b5667c090c8b4f119a6f8301bd7594b8e86972e8a4743763200ba47cd2edd76a",
+    "paper/data/image_trajectories.csv": "1ab53e8143225a1e44c8e1730f6cbbf078fb1981ebd00232f572de7988e9d3de"
+  }
+}

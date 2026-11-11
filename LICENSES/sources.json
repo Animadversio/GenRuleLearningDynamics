@@ -1,0 +1,10 @@
+{
+  "DiT-LICENSE.txt": {
+    "source": "https://raw.githubusercontent.com/facebookresearch/DiT/main/LICENSE.txt",
+    "sha256": "7c6858d0e71dc8b858255270ad4b5004e80b5b058bf5bbc408a28430d6ddbf4b"
+  },
+  "EDM-LICENSE.txt": {
+    "source": "https://raw.githubusercontent.com/NVlabs/edm/008a4e5316c8e3bfe61a62f874bddba254295afb/LICENSE.txt",
+    "sha256": "b7249043cca5e5c88f99730ddc40490a3284780dfe423b19f2c75bd5e2a8f03e"
+  }
+}
